@@ -1,0 +1,30 @@
+<div class="inline-block m-4">
+  <strong><h1 style="color:red">CURSO ANGULAR</h1></strong>
+</div>
+<div class="inline-block m-4 border border-dark p-4" style="border-radius: 20px">
+  <div>
+    <h2>
+      <strong>Directiva ngIf</strong>
+    </h2>
+  </div>
+  <div class="pt-4">
+    <input type="text" placeholder="Ingrese su nombre" class="form-control" #name>
+  </div>
+  <div class="pt-2">
+    <button class="btn btn-primary" (click)="mostrara_en_consola(name.value)">
+      mostrar en consola
+    </button>
+  </div>
+  <div *ngIf="openAlert; else mensaje" class="alert alert-primary mt-4">
+    <p>se ha enviado el mensaje</p>
+    <button class="btn btn-danger" (click)="openAlert=false">X</button>
+  </div>
+  <ng-template #mensaje>
+    <div class="alert alert-danger mt-4">
+      <p>NO se ha enviado el mensaje</p>
+    </div>
+  </ng-template>
+</div>
+
+<!-- Use the component -->
+<app-directiva-ng-for></app-directiva-ng-for>
